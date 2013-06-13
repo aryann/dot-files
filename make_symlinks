@@ -11,6 +11,7 @@ REALPATH=$(python -c "import os; print os.path.realpath('${0}')")
 DIR=$(dirname ${REALPATH})/configs
 FILES=$(ls -A ${DIR})
 
+echo $FILES
 for file in ${FILES}; do
-    ln -s ${DIR}/${file} ~/${file}
+    [[ -e ~/${file} ]] || ln -s ${DIR}/${file} ~/${file}
 done
