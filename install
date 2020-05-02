@@ -23,3 +23,8 @@ if [ ! -e ~/.config/git/config ]; then
     ln -s "${DIR}/gitconfig" ~/.config/git/config
 fi
 
+mkdir -p ~/.emacs.d
+if [ ! -e ~/.emacs.d/init.el ]; then
+    ln -s "${DIR}/emacs.el" ~/.emacs.d/init.el
+fi
+
