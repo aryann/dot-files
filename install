@@ -1,0 +1,25 @@
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+DIR="$(dirname $(realpath $0))/configs"
+
+BASHRC=~/.bashrc
+BASH_PROFILE=~/.bash_profile
+
+if [[ -f ${BASHRC} ]]; then
+    BASH_CONFIGS="${BASHRC}"
+else
+    BASH_CONFIGS="${BASH_PROFILE}"
+fi
+
+if ! grep -q "${DIR}/bash.sh" "${BASH_CONFIGS}"; then
+    echo "source ${DIR}/bash.sh" >> ${BASH_CONFIGS}
+fi
+
+mkdir -p ~/.config/git
+if [ ! -e ~/.config/git/config ]; then 
+    ln -s "${DIR}/gitconfig" ~/.config/git/config
+fi
+
