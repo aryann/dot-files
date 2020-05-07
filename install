@@ -28,3 +28,6 @@ if [ ! -e ~/.emacs.d/init.el ]; then
     ln -s "${DIR}/emacs.el" ~/.emacs.d/init.el
 fi
 
+if [ ! -e ~/.tmux.conf ]; then
+    ln -s "${DIR}/tmux.conf" ~/.tmux.conf
+fi
