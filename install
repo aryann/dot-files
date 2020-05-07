@@ -3,10 +3,10 @@
 set -o errexit
 set -o nounset
 
-DIR="$(dirname $(realpath $0))/configs"
+readonly DIR="$(dirname $(realpath $0))/configs"
 
-BASHRC=~/.bashrc
-BASH_PROFILE=~/.bash_profile
+readonly BASHRC=~/.bashrc
+readonly BASH_PROFILE=~/.bash_profile
 
 if [[ -f ${BASHRC} ]]; then
     BASH_CONFIGS="${BASHRC}"
@@ -15,7 +15,7 @@ else
 fi
 
 if ! grep -q "${DIR}/bash.sh" "${BASH_CONFIGS}"; then
-    echo "source ${DIR}/bash.sh" >> ${BASH_CONFIGS}
+    echo "source ${DIR}/bash.sh" >> "${BASH_CONFIGS}"
 fi
 
 mkdir -p ~/.config/git
