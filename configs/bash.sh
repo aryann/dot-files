@@ -8,3 +8,7 @@ b() {
     e ~/dot-files/configs/bash.sh
     source ~/.bashrc || source ~/.bash_profile
 }
+
+if [ -d ~/go ]; then
+    export GOPATH=~/go
+fi
