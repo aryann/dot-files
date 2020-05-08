@@ -1,0 +1,5 @@
+{
+    "terminal.integrated.allowChords": false,
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true
+}

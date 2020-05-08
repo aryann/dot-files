@@ -31,3 +31,8 @@ fi
 if [ ! -e ~/.tmux.conf ]; then
     ln -s "${DIR}/tmux.conf" ~/.tmux.conf
 fi
+
+readonly VS_CODE_SETTINGS=~/.config/Code/User/settings.json
+if [ ! -e "${VS_CODE_SETTINGS}" ]; then
+    ln -s "${DIR}/visualstudiocode.json" "${VS_CODE_SETTINGS}"
+fi
