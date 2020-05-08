@@ -21,3 +21,10 @@ export HISTSIZE=1000000
 export HISTCONTROL=ignoreboth
 export HISTIGNORE='fg:bg:history'
 export PROMPT_COMMAND='history -a'
+
+# Is Rust installed? If so source its env file so PATH is modified
+# properly.
+if [ -f ~/.cargo/env ]; then
+    source ~/.cargo/env
+fi
+
