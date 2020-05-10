@@ -22,9 +22,16 @@ export HISTCONTROL=ignoreboth
 export HISTIGNORE='fg:bg:history'
 export PROMPT_COMMAND='history -a'
 
-# Is Rust installed? If so source its env file so PATH is modified
+# Is Rust installed? If so, source its env file so PATH is modified
 # properly.
 if [ -f ~/.cargo/env ]; then
     source ~/.cargo/env
 fi
 
+# Launches Google Chrome with an SSL key log file.
+chrome() {
+    export SSLKEYLOGFILE="${HOME}/sslkeylog.log"
+    google-chrome-stable
+    rm "${SSLKEYLOGFILE}"
+    unset SSLKEYLOGFILE
+}
