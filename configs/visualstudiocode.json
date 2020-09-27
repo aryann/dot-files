@@ -1,7 +1,22 @@
 {
-    "terminal.integrated.allowChords": false,
-    "go.formatTool": "goimports",
-    "go.useLanguageServer": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "terminal.integrated.allowChords": false,
+  "go.formatTool": "gofmt",
+  "go.useLanguageServer": true,
+  "[go]": {
     "editor.formatOnSave": true
+  },
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust"
+  },
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "mervin.markdown-formatter"
+  },
+  "markdownFormatter.fullWidthTurnHalfWidth": "80",
+  "window.zoomLevel": 1
 }

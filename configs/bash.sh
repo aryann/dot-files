@@ -35,3 +35,10 @@ chrome() {
     rm "${SSLKEYLOGFILE}"
     unset SSLKEYLOGFILE
 }
+
+m() {
+    while inotifywait -e close_write "$1"; do $2; done
+}
+
+# Allow forward search of history in Bash.
+stty -ixon
